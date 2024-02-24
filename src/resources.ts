@@ -1,4 +1,4 @@
-import { ImageSource, Loader } from 'excalibur';
+import { ImageSource, Loader, Vector } from 'excalibur';
 
 import laser from './asset/laser.png';
 import meteor from './asset/meteor.png';
@@ -18,4 +18,6 @@ export const loader = new Loader();
 
 for (const res of Object.values(Resources)) {
     loader.addResource(res);
+    loader.backgroundColor = 'DarkGray';
+    //loader.logo = ship1;
 }

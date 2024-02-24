@@ -11,10 +11,8 @@ export class Player extends Actor {
     asset: PlayerAsset;
 
     constructor({ asset }: { asset: PlayerAsset }) {
-        const randomPosY = Math.floor(Math.random() * (300 - 100 + 1)) + 100;
-
         super({
-            pos: vec(100, randomPosY),
+            pos: vec(100, 600),
             width: 32,
             height: 32,
             scale: vec(3, 3),

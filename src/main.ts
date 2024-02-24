@@ -16,6 +16,7 @@ export class Game extends Engine {
         super({
             width: 1500,
             height: 692,
+            backgroundColor: Color.DarkGray,
         });
 
         this.score = 0;
@@ -79,18 +80,21 @@ export class Game extends Engine {
 
     addEnemies() {
         setInterval(() => {
-            const enemy = new Enemy({ asset: 'meteor' });
+            if (this.ready) {
+                console.log('addEnemy');
+                const enemy = new Enemy({ asset: 'meteor' });
 
-            enemy.on('collisionstart', () => {
-                enemy.kill();
-            });
+                enemy.on('collisionstart', () => {
+                    enemy.kill();
+                });
 
-            enemy.on('exitviewport', () => {
-                this.decrementLives();
-                enemy.kill();
-            });
+                enemy.on('exitviewport', () => {
+                    this.decrementLives();
+                    enemy.kill();
+                });
 
-            this.add(enemy);
+                this.add(enemy);
+            }
         }, 1500);
     }
 }

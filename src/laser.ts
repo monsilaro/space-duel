@@ -13,6 +13,7 @@ export class Laser extends Actor {
             pos: vec(pos.x + 50, pos.y),
             width: 8,
             height: 12,
+            scale: vec(1.5, 1.5),
             rotation: degresToRadians(90),
         });
 
